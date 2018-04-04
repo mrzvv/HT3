@@ -46,6 +46,7 @@ public class CreateNewRepositoryPage extends com.epam.ta.pages.AbstractPage {
         inputRepositoryName.sendKeys(repositoryFullName);
         inputRepositoryDescription.sendKeys(repositoryDescription);
         butttonCreate.click();
+        logger.info("Clicked on button for creating new repo");
         return repositoryFullName;
     }
 

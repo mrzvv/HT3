@@ -1,11 +1,15 @@
 package com.epam.ta.pages;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class RepositorySettingsPage extends AbstractPage {
+    private static final Logger logger = LogManager.getRootLogger();
+
     @FindBy(xpath = "//button[contains(text(),'Delete this repository')]")
     private WebElement buttonDeleteRepository;
 
@@ -39,6 +43,7 @@ public class RepositorySettingsPage extends AbstractPage {
         form.clear();
         form.sendKeys(repoName);
         deleteRepoButton.click();
+        logger.info("Clicked on button for deletion repo");
     }
 
     @Override

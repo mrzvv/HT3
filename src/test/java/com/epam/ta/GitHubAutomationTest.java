@@ -30,7 +30,7 @@ public class GitHubAutomationTest {
         Assert.assertTrue(steps.currentRepositoryIsEmpty());
     }
 
-    @Test(description = "Add README")
+    @Test(description = "Add README.md")
     public void oneCanAddReadme() {
         steps.loginGithub(USERNAME, PASSWORD);
         steps.createNewRepository("testRepo", "auto-generated test repo");
